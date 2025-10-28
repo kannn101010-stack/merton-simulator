@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #1e80f0; -webkit-text-stroke: #1e80f0}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #8c8c8c; -webkit-text-stroke: #8c8c8c}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s3 {font-kerning: none; color: #1e80f0; -webkit-text-stroke: 0px #1e80f0}
+    span.s4 {font-kerning: none; color: #8c8c8c; -webkit-text-stroke: 0px #8c8c8c}
+    span.s5 {text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
+    span.s6 {font-kerning: none; color: #ee2b2a; -webkit-text-stroke: 0px #ee2b2a}
+    span.s7 {font-kerning: none; color: #40a33f; -webkit-text-stroke: 0px #40a33f}
+    span.s8 {text-decoration: underline ; font-kerning: none}
+    span.s9 {text-decoration: underline ; font-kerning: none; -webkit-text-stroke: 0px #0000e9}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">html</span><span class="s2"> lang</span><span class="s1">="en"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">head</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">meta</span><span class="s2"> charset</span><span class="s1">="UTF-8"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">meta</span><span class="s2"> name</span><span class="s1">="viewport"</span><span class="s2"> content</span><span class="s1">="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">title</span><span class="s4">&gt;</span><span class="s1">Merton Model Simulator</span><span class="s4">&lt;/</span><span class="s3">title</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;!-- Tailwind CSS --&gt;</span></p>
+<p class="p5"><span class="s4">&lt;</span><span class="s3">script</span><span class="s2"> src</span><span class="s4">="<a href="https://cdn.tailwindcss.com/"><span class="s5">https://cdn.tailwindcss.com</span></a>"&gt;&lt;/</span><span class="s3">script</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;!-- Plotly --&gt;</span></p>
+<p class="p5"><span class="s4">&lt;</span><span class="s3">script</span><span class="s2"> src</span><span class="s4">="<a href="https://cdn.plot.ly/plotly-2.32.0.min.js"><span class="s5">https://cdn.plot.ly/plotly-2.32.0.min.js</span></a>"&gt;&lt;/</span><span class="s3">script</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">style</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s1">.custom-scrollbar::-webkit-scrollbar</span><span class="s2"> {</span></p>
+<p class="p3"><span class="s1">width: 8px;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">.custom-scrollbar::-webkit-scrollbar-thumb</span><span class="s2"> {</span></p>
+<p class="p3"><span class="s1">background-color: </span><span class="s4">rgba(</span><span class="s1">100, 116, 139, 0.5</span><span class="s4">)</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">border-radius: 4px;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">.custom-scrollbar::-webkit-scrollbar-track</span><span class="s2"> {</span></p>
+<p class="p3"><span class="s1">background-color: </span><span class="s4">transparent</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">input</span><span class="s2">[</span><span class="s4">type</span><span class="s2">=</span><span class="s4">range</span><span class="s2">]</span><span class="s1">::-webkit-slider-thumb</span><span class="s2"> {</span></p>
+<p class="p3"><span class="s1">-webkit-appearance: </span><span class="s4">none</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">width: 16px;</span></p>
+<p class="p3"><span class="s1">height: 16px;</span></p>
+<p class="p3"><span class="s1">border-radius: 50%;</span></p>
+<p class="p3"><span class="s1">background: #2563eb;</span></p>
+<p class="p3"><span class="s1">cursor: </span><span class="s4">pointer</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">margin-top: -6px;</span></p>
+<p class="p3"><span class="s1">box-shadow: 0 0 5px </span><span class="s4">rgba(</span><span class="s1">0,0,0,0.2</span><span class="s4">)</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">input</span><span class="s2">[</span><span class="s4">type</span><span class="s2">=</span><span class="s4">range</span><span class="s2">]</span><span class="s1">::-moz-range-thumb</span><span class="s2"> {</span></p>
+<p class="p3"><span class="s1">width: 16px;</span></p>
+<p class="p3"><span class="s1">height: 16px;</span></p>
+<p class="p3"><span class="s1">border-radius: 50%;</span></p>
+<p class="p3"><span class="s1">background: #2563eb;</span></p>
+<p class="p3"><span class="s1">cursor: </span><span class="s4">pointer</span><span class="s1">;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">style</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">head</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">body</span><span class="s2"> class</span><span class="s1">="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col"&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">header</span><span class="s2"> class</span><span class="s1">="p-4 bg-white shadow-md"&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">h1</span><span class="s1"> class</span><span class="s4">="text-2xl font-bold text-gray-900"&gt;</span><span class="s1">Merton Consumption–Investment Model</span><span class="s4">&lt;/</span><span class="s3">h1</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">p</span><span class="s1"> class</span><span class="s4">="text-sm text-gray-500"&gt;</span><span class="s1">Interactive simulator of wealth and consumption under stochastic conditions.</span><span class="s4">&lt;/</span><span class="s3">p</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">header</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">main</span><span class="s2"> class</span><span class="s1">="flex-grow flex flex-col lg:flex-row overflow-hidden"&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;!-- Controls --&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> class</span><span class="s1">="lg:w-1/4 w-full p-6 bg-gray-100 border-r border-gray-200 overflow-y-auto custom-scrollbar shadow-inner"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">h2</span><span class="s2"> class</span><span class="s1">="text-xl font-semibold mb-4 text-gray-700 border-b pb-2"&gt;</span><span class="s2">Simulation Parameters</span><span class="s1">&lt;/</span><span class="s3">h2</span><span class="s1">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> id</span><span class="s1">="controls"</span><span class="s2"> class</span><span class="s1">="space-y-4"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="W0"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Initial Wealth (W₀): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="W0-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">100</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="W0"</span><span class="s2"> min</span><span class="s1">="10"</span><span class="s2"> max</span><span class="s1">="500"</span><span class="s2"> step</span><span class="s1">="10"</span><span class="s2"> value</span><span class="s1">="100"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="T"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Time Horizon (T): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="T-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">10</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span><span class="s2"> years</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="T"</span><span class="s2"> min</span><span class="s1">="1"</span><span class="s2"> max</span><span class="s1">="30"</span><span class="s2"> step</span><span class="s1">="1"</span><span class="s2"> value</span><span class="s1">="10"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="mu"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Expected Return (μ): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="mu-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">8.0%</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="mu"</span><span class="s2"> min</span><span class="s1">="0.0"</span><span class="s2"> max</span><span class="s1">="0.2"</span><span class="s2"> step</span><span class="s1">="0.01"</span><span class="s2"> value</span><span class="s1">="0.08"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="sigma"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Volatility (σ): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="sigma-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">20.0%</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="sigma"</span><span class="s2"> min</span><span class="s1">="0.01"</span><span class="s2"> max</span><span class="s1">="0.5"</span><span class="s2"> step</span><span class="s1">="0.01"</span><span class="s2"> value</span><span class="s1">="0.2"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="gamma"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Risk Aversion (γ): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="gamma-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">2.0</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="gamma"</span><span class="s2"> min</span><span class="s1">="0.1"</span><span class="s2"> max</span><span class="s1">="5.0"</span><span class="s2"> step</span><span class="s1">="0.1"</span><span class="s2"> value</span><span class="s1">="2.0"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">label</span><span class="s2"> for</span><span class="s1">="n_paths"</span><span class="s2"> class</span><span class="s1">="block text-sm font-medium text-gray-700"&gt;</span></p>
+<p class="p2"><span class="s2">Number of Paths: </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="n_paths-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-blue-600"&gt;</span><span class="s2">100</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">label</span><span class="s4">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">input</span><span class="s2"> type</span><span class="s1">="range"</span><span class="s2"> id</span><span class="s1">="n_paths"</span><span class="s2"> min</span><span class="s1">="10"</span><span class="s2"> max</span><span class="s1">="200"</span><span class="s2"> step</span><span class="s1">="10"</span><span class="s2"> value</span><span class="s1">="100"</span><span class="s2"> class</span><span class="s1">="w-full"&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> class</span><span class="s1">="mt-6 p-3 bg-white rounded-lg border border-blue-200 text-sm"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">h3</span><span class="s2"> class</span><span class="s1">="font-medium text-blue-700 mb-1"&gt;</span><span class="s2">Fixed Parameters</span><span class="s1">&lt;/</span><span class="s3">h3</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">p</span><span class="s4">&gt;</span><span class="s1">Risk-Free Rate (r): 3%</span><span class="s4">&lt;/</span><span class="s3">p</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">p</span><span class="s4">&gt;</span><span class="s1">Time Preference (ρ): 5%</span><span class="s4">&lt;/</span><span class="s3">p</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">p</span><span class="s4">&gt;</span><span class="s1">Time Step (Δt): 0.01 years</span><span class="s4">&lt;/</span><span class="s3">p</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s3">p</span><span class="s4">&gt;</span><span class="s1">Stability Factor (ε): 0.01</span><span class="s4">&lt;/</span><span class="s3">p</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> id</span><span class="s1">="output-info"</span><span class="s2"> class</span><span class="s1">="mt-4 p-3 bg-green-50 rounded-lg border border-green-200 text-sm"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">p</span><span class="s2"> class</span><span class="s1">="font-medium text-green-700"&gt;</span></p>
+<p class="p2"><span class="s2">Optimal Stock Fraction (π*): </span><span class="s1">&lt;</span><span class="s3">span</span><span class="s2"> id</span><span class="s1">="pi-star-value"</span><span class="s2"> class</span><span class="s1">="font-bold text-green-800"&gt;</span><span class="s2">0.000</span><span class="s1">&lt;/</span><span class="s3">span</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/</span><span class="s3">p</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;!-- Plots --&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> class</span><span class="s1">="lg:w-3/4 w-full p-6 space-y-6 overflow-y-auto"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> id</span><span class="s1">="plot-wealth-paths"</span><span class="s2"> class</span><span class="s1">="w-full bg-white rounded-xl shadow-lg border border-gray-100"</span><span class="s2"> style</span><span class="s1">="min-height: 400px;"&gt;&lt;/</span><span class="s3">div</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s1">&lt;</span><span class="s3">div</span><span class="s2"> id</span><span class="s1">="plot-terminal-distribution"</span><span class="s2"> class</span><span class="s1">="w-full bg-white rounded-xl shadow-lg border border-gray-100"</span><span class="s2"> style</span><span class="s1">="min-height: 400px;"&gt;&lt;/</span><span class="s3">div</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">div</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">main</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s4">&lt;</span><span class="s1">script</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s1">document.addEventListener(</span><span class="s4">"DOMContentLoaded"</span><span class="s1">, </span><span class="s4">function</span><span class="s1"> () {</span></p>
+<p class="p2"><span class="s1">// Reinstating all necessary constants for calculation stability</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> r = </span><span class="s6">0.03</span><span class="s1">, rho = </span><span class="s6">0.05</span><span class="s1">, dt = </span><span class="s6">0.01</span><span class="s1">, epsilon = </span><span class="s6">0.01</span><span class="s1">;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">let</span><span class="s2"> z_buffer = []; </span><span class="s1">// Restored for efficient Box-Muller</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">function</span><span class="s1"> randn() {</span></p>
+<p class="p3"><span class="s4">if</span><span class="s1"> (z_buffer.length &gt; </span><span class="s6">0</span><span class="s1">) {</span></p>
+<p class="p3"><span class="s4">return</span><span class="s1"> z_buffer.pop();</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p3"><span class="s4">let</span><span class="s1"> u = </span><span class="s6">0</span><span class="s1">, v = </span><span class="s6">0</span><span class="s1">;</span></p>
+<p class="p3"><span class="s4">while</span><span class="s1"> (u === </span><span class="s6">0</span><span class="s1">) u = </span><span class="s7">Math</span><span class="s1">.random();</span></p>
+<p class="p3"><span class="s4">while</span><span class="s1"> (v === </span><span class="s6">0</span><span class="s1">) v = </span><span class="s7">Math</span><span class="s1">.random();</span></p>
+<p class="p3"><span class="s4">let</span><span class="s1"> z0 = </span><span class="s7">Math</span><span class="s1">.sqrt(-</span><span class="s6">2.0</span><span class="s1"> * </span><span class="s7">Math</span><span class="s1">.log(u)) * </span><span class="s7">Math</span><span class="s1">.cos(</span><span class="s6">2.0</span><span class="s1"> * </span><span class="s7">Math</span><span class="s1">.</span><span class="s7">PI</span><span class="s1"> * v);</span></p>
+<p class="p3"><span class="s4">let</span><span class="s1"> z1 = </span><span class="s7">Math</span><span class="s1">.sqrt(-</span><span class="s6">2.0</span><span class="s1"> * </span><span class="s7">Math</span><span class="s1">.log(u)) * </span><span class="s7">Math</span><span class="s1">.sin(</span><span class="s6">2.0</span><span class="s1"> * </span><span class="s7">Math</span><span class="s1">.</span><span class="s7">PI</span><span class="s1"> * v);</span></p>
+<p class="p3"><span class="s1">z_buffer.push(z1);</span></p>
+<p class="p2"><span class="s1">return</span><span class="s2"> z0;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">function</span><span class="s1"> mertonSimulation(</span><span class="s7">W0</span><span class="s1">, </span><span class="s7">T</span><span class="s1">, mu, sigma, gamma, n_paths) {</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">N</span><span class="s1"> = </span><span class="s7">Math</span><span class="s1">.floor(</span><span class="s7">T</span><span class="s1"> / dt);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> time = </span><span class="s7">Array</span><span class="s1">.</span><span class="s4">from</span><span class="s1">({ length: </span><span class="s7">N</span><span class="s1"> + </span><span class="s6">1</span><span class="s1"> }, (_, i) =&gt; i * dt);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> pi_star = (sigma === </span><span class="s6">0</span><span class="s1"> || gamma === </span><span class="s6">0</span><span class="s1">) ? </span><span class="s6">0</span><span class="s1"> : (mu - r) / (sigma ** </span><span class="s6">2</span><span class="s1"> * gamma);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">let</span><span class="s1"> nu = rho / gamma - (</span><span class="s6">1</span><span class="s1"> - gamma) * ((mu - r) * pi_star / (</span><span class="s6">2</span><span class="s1"> * gamma) + r / gamma);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">// Numerical stability check for nu</span></p>
+<p class="p3"><span class="s4">if</span><span class="s1"> (!isFinite(nu)) {</span></p>
+<p class="p2"><span class="s2">console.warn(</span><span class="s1">"Merton Simulation Warning: Calculated nu is non-finite. Using fallback nu=1.0."</span><span class="s2">);</span></p>
+<p class="p3"><span class="s1">nu = </span><span class="s6">1.0</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">W</span><span class="s1"> = </span><span class="s7">Array</span><span class="s1">.</span><span class="s4">from</span><span class="s1">({ length: n_paths }, () =&gt; </span><span class="s4">new</span><span class="s1"> </span><span class="s7">Array</span><span class="s1">(</span><span class="s7">N</span><span class="s1"> + </span><span class="s6">1</span><span class="s1">).fill(</span><span class="s7">W0</span><span class="s1">));</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">for</span><span class="s1"> (</span><span class="s4">let</span><span class="s1"> i = </span><span class="s6">0</span><span class="s1">; i &lt; </span><span class="s7">N</span><span class="s1">; i++) {</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> t = time[i];</span></p>
+<p class="p3"><span class="s4">for</span><span class="s1"> (</span><span class="s4">let</span><span class="s1"> k = </span><span class="s6">0</span><span class="s1">; k &lt; n_paths; k++) {</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">// RESTORING CONSUMPTION FORMULA (c[:,i] in original Python)</span></p>
+<p class="p3"><span class="s4">let</span><span class="s1"> consumption_factor;</span></p>
+<p class="p3"><span class="s4">if</span><span class="s1"> (nu !== </span><span class="s6">0</span><span class="s1">) {</span></p>
+<p class="p2"><span class="s1">// Using epsilon in the denominator for stability, matching original Python code</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> denominator = </span><span class="s6">1</span><span class="s1"> + (nu * epsilon - </span><span class="s6">1</span><span class="s1">) * </span><span class="s7">Math</span><span class="s1">.exp(-nu * (</span><span class="s7">T</span><span class="s1"> - t));</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">if</span><span class="s1"> (denominator === </span><span class="s6">0</span><span class="s1"> || !isFinite(denominator)) {</span></p>
+<p class="p2"><span class="s2">consumption_factor = </span><span class="s6">0</span><span class="s2">; </span><span class="s1">// Guard against numerical errors near end boundary</span></p>
+<p class="p3"><span class="s1">} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p3"><span class="s1">consumption_factor = nu / denominator;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p3"><span class="s1">} </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p3"><span class="s1">consumption_factor = </span><span class="s6">1</span><span class="s1"> / (</span><span class="s7">T</span><span class="s1"> - t + epsilon);</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> c = consumption_factor * </span><span class="s7">W</span><span class="s1">[k][i];</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">// SDE Update</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> dB = </span><span class="s7">Math</span><span class="s1">.sqrt(dt) * randn();</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> drift = (r + pi_star * (mu - r)) * </span><span class="s7">W</span><span class="s1">[k][i] - c;</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> diffusion = pi_star * sigma * </span><span class="s7">W</span><span class="s1">[k][i] * dB;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s7">W</span><span class="s1">[k][i + </span><span class="s6">1</span><span class="s1">] = </span><span class="s7">Math</span><span class="s1">.max(</span><span class="s7">W</span><span class="s1">[k][i] + drift * dt + diffusion, </span><span class="s6">0</span><span class="s1">);</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p3"><span class="s4">return</span><span class="s1"> { time, </span><span class="s7">W</span><span class="s1">, pi_star };</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">function</span><span class="s1"> plotWealthPaths(</span><span class="s7">W</span><span class="s1">, time, n_paths) {</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> traces = [];</span></p>
+<p class="p3"><span class="s4">for</span><span class="s1"> (</span><span class="s4">let</span><span class="s1"> k = </span><span class="s6">0</span><span class="s1">; k &lt; </span><span class="s7">Math</span><span class="s1">.min(n_paths, </span><span class="s6">20</span><span class="s1">); k++) {</span></p>
+<p class="p3"><span class="s1">traces.push({ x: time, y: </span><span class="s7">W</span><span class="s1">[k], mode: </span><span class="s4">'lines'</span><span class="s1">, line: { width: </span><span class="s6">1.5</span><span class="s1">, color: </span><span class="s4">'#3b82f6'</span><span class="s1"> }, opacity: </span><span class="s6">0.6</span><span class="s1"> });</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p3"><span class="s7">Plotly</span><span class="s1">.newPlot(</span><span class="s4">'plot-wealth-paths'</span><span class="s1">, traces, {</span></p>
+<p class="p2"><span class="s2">title: </span><span class="s1">'Wealth Evolution'</span><span class="s2">,</span></p>
+<p class="p3"><span class="s1">xaxis: { title: </span><span class="s4">'Time (Years)'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1">yaxis: { title: </span><span class="s4">'Wealth ($)'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1">showlegend: </span><span class="s4">false</span></p>
+<p class="p3"><span class="s1">});</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">function</span><span class="s1"> plotTerminalDistribution(</span><span class="s7">W</span><span class="s1">, </span><span class="s7">T</span><span class="s1">) {</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> terminal = </span><span class="s7">W</span><span class="s1">.map(p =&gt; p[p.length - </span><span class="s6">1</span><span class="s1">]);</span></p>
+<p class="p2"><span class="s7">Plotly</span><span class="s2">.newPlot(</span><span class="s1">'plot-terminal-distribution'</span><span class="s2">, [{</span></p>
+<p class="p3"><span class="s1">x: terminal, type: </span><span class="s4">'histogram'</span><span class="s1">, nbinsx: </span><span class="s6">30</span><span class="s1">,</span></p>
+<p class="p3"><span class="s1">marker: { color: </span><span class="s4">'#f97316'</span><span class="s1">, line: { color: </span><span class="s4">'#eab308'</span><span class="s1">, width: </span><span class="s6">1</span><span class="s1"> } }</span></p>
+<p class="p3"><span class="s1">}], { title: Terminal Wealth Distribution (T=${T}), xaxis: { title: </span><span class="s4">'Wealth'</span><span class="s1"> }, yaxis: { title: </span><span class="s4">'Frequency'</span><span class="s1"> } });</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">function</span><span class="s1"> updatePlots() {</span></p>
+<p class="p2"><span class="s1">// Check if Plotly is loaded</span></p>
+<p class="p2"><span class="s1">if</span><span class="s2"> (</span><span class="s1">typeof</span><span class="s2"> </span><span class="s7">Plotly</span><span class="s2"> === </span><span class="s1">'undefined'</span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2">document.getElementById(</span><span class="s1">'plot-wealth-paths'</span><span class="s2">).innerHTML = </span><span class="s1">'&lt;div class="p-6 text-center text-red-500 font-bold"&gt;Error: Plotting library failed to load.&lt;/div&gt;'</span><span class="s2">;</span></p>
+<p class="p2"><span class="s1">return</span><span class="s2">;</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">W0</span><span class="s1"> = parseFloat(</span><span class="s7">W0Input</span><span class="s1">.value);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">T</span><span class="s1"> = parseFloat(</span><span class="s7">TInput</span><span class="s1">.value);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> mu = parseFloat(muInput.value);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> sigma = parseFloat(sigmaInput.value);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> gamma = parseFloat(gammaInput.value);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> n_paths = parseInt(npathsInput.value);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> { time, </span><span class="s7">W</span><span class="s1">, pi_star } = mertonSimulation(</span><span class="s7">W0</span><span class="s1">, </span><span class="s7">T</span><span class="s1">, mu, sigma, gamma, n_paths);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">plotWealthPaths(</span><span class="s7">W</span><span class="s1">, time, n_paths);</span></p>
+<p class="p3"><span class="s1">plotTerminalDistribution(</span><span class="s7">W</span><span class="s1">, </span><span class="s7">T</span><span class="s1">);</span></p>
+<p class="p3"><span class="s1">document.getElementById(</span><span class="s4">'pi-star-value'</span><span class="s1">).textContent = pi_star.toFixed(</span><span class="s6">3</span><span class="s1">);</span></p>
+<p class="p3"><span class="s1">}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">W0Input</span><span class="s1"> = document.getElementById(</span><span class="s4">'W0'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> </span><span class="s7">TInput</span><span class="s1"> = document.getElementById(</span><span class="s4">'T'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> muInput = document.getElementById(</span><span class="s4">'mu'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> sigmaInput = document.getElementById(</span><span class="s4">'sigma'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> gammaInput = document.getElementById(</span><span class="s4">'gamma'</span><span class="s1">);</span></p>
+<p class="p3"><span class="s4">const</span><span class="s1"> npathsInput = document.getElementById(</span><span class="s4">'n_paths'</span><span class="s1">);</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">[</span><span class="s7">W0Input</span><span class="s1">, </span><span class="s7">TInput</span><span class="s1">, muInput, sigmaInput, gammaInput, npathsInput].forEach(input =&gt; {</span></p>
+<p class="p3"><span class="s1">input.addEventListener(</span><span class="s4">'input'</span><span class="s1">, () =&gt; {</span></p>
+<p class="p2"><span class="s1">// Update label display</span></p>
+<p class="p3"><span class="s1">document.getElementById(${<a href="http://input.id/"><span class="s5">input.id</span></a>}-value).textContent =</span></p>
+<p class="p5"><span class="s8"><a href="http://input.id/">input.id</a></span><span class="s2"> === </span><span class="s4">'mu'</span><span class="s2"> || <a href="http://input.id/"><span class="s9">input.id</span></a> === </span><span class="s4">'sigma'</span></p>
+<p class="p3"><span class="s1">? (input.value * </span><span class="s6">100</span><span class="s1">).toFixed(</span><span class="s6">1</span><span class="s1">) + </span><span class="s4">'%'</span></p>
+<p class="p3"><span class="s1">: input.value;</span></p>
+<p class="p2"><span class="s1">// Trigger plot update on input change</span></p>
+<p class="p3"><span class="s1">updatePlots();</span></p>
+<p class="p3"><span class="s1">});</span></p>
+<p class="p3"><span class="s1">});</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">// Initial call to render plots when the page loads</span></p>
+<p class="p3"><span class="s1">updatePlots();</span></p>
+<p class="p3"><span class="s1">});</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">script</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">body</span><span class="s4">&gt;</span></p>
+<p class="p1"><span class="s4">&lt;/</span><span class="s1">html</span><span class="s4">&gt;</span></p>
+</body>
+</html>
